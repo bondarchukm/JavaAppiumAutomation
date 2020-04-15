@@ -6,6 +6,6 @@ public class MainClassTest {
 
     @Test
     public void testGetLocalNumber(){
-        Assert.assertEquals("Ups! The number is not 14!",14, number.getLocalNumber());
+        Assert.assertEquals("Ups! The number is not 14!", 14, number.getLocalNumber());
     }
 }

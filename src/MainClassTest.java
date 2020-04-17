@@ -12,6 +12,6 @@ public class MainClassTest {
 
     @Test
     public void testGetClassNumber(){
-        Assert.assertTrue("The " + classNumber.getClassNumber() + " is less (or equals) then 45" ,classNumber.getClassNumber() > 45);
+        Assert.assertTrue("The " + classNumber.getClassNumber() + " is not bigger then 45" ,classNumber.getClassNumber() > 45);
      }
 }

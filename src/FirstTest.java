@@ -90,37 +90,55 @@ public class FirstTest {
 //        );
 //    }
 
+//    @Test
+//    public void testCompareArticleTitle()
+//    {
+//        waitForElementAndClick(
+//                By.id("org.wikipedia:id/search_container"),
+//                "Cannot find 'Search Wikipedia' input",
+//                5
+//        );
+//        waitForElementAndSendKeys(
+//                By.xpath("//*[contains(@text, 'Search…')]"),
+//                "Java",
+//                "Cannot find search input",
+//                5
+//        );
+//        waitForElementAndClick(
+//                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+//                "Cannot find 'Search Wikipedia' input",
+//                5
+//        );
+//        WebElement title_element = waitForElementPresent(
+//                By.id("org.wikipedia:id/view_page_title_text"),
+//                "Cannot find article title",
+//                15
+//        );
+//        String article_title = title_element.getAttribute("text");
+//
+//        Assert.assertEquals(
+//                "We see unexpected title",
+//                "Java (programming language)",
+//                article_title
+//        );
+//    }
+
     @Test
-    public void testCompareArticleTitle()
+    public void textPresenceAtSearchField ()
     {
         waitForElementAndClick(
                 By.id("org.wikipedia:id/search_container"),
                 "Cannot find 'Search Wikipedia' input",
                 5
         );
-        waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Cannot find search input",
-                5
-        );
-        waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot find 'Search Wikipedia' input",
-                5
-        );
-        WebElement title_element = waitForElementPresent(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find article title",
-                15
-        );
-        String article_title = title_element.getAttribute("text");
 
-        Assert.assertEquals(
-                "We see unexpected title",
-                "Java (programming language)",
-                article_title
+        waitForTextPresentInField(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Search…",
+                "Placeholder text is not 'Search...'",
+                5
         );
+
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
@@ -129,22 +147,26 @@ public class FirstTest {
         wait.withMessage(error_message + "\n");
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
+
     private WebElement waitForElementPresent(By by, String error_message)
     {
         return waitForElementPresent(by, error_message, 5);
     }
+
     private WebElement waitForElementAndClick(By by, String error_message, long timeOutInSeconds)
     {
         WebElement element = waitForElementPresent(by, error_message, timeOutInSeconds);
         element.click();
         return element;
     }
+
     private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeOutInSeconds)
     {
         WebElement element = waitForElementPresent(by, error_message, timeOutInSeconds);
         element.sendKeys(value);
         return element;
     }
+
     private boolean waitForElementNotPresent(By by, String error_message, long timeOutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
@@ -153,10 +175,20 @@ public class FirstTest {
                 ExpectedConditions.invisibilityOfElementLocated(by)
         );
     }
+
     private WebElement waitForElementAndClear(By by, String error_message, long timeOutInSeconds)
     {
         WebElement element = waitForElementPresent(by, error_message, timeOutInSeconds);
         element.clear();
         return element;
     }
+
+//    private boolean waitForTextPresentInField(By by, String expected_value, String error_message, long timeOutInSeconds)
+//    {
+//        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+//        wait.withMessage(error_message + "\n");
+//        return wait.until(
+//                ExpectedConditions.attributeContains(by, "text", expected_value)
+//        );
+//    }
 }

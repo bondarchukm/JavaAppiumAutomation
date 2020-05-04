@@ -183,12 +183,12 @@ public class FirstTest {
         return element;
     }
 
-//    private boolean waitForTextPresentInField(By by, String expected_value, String error_message, long timeOutInSeconds)
-//    {
-//        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
-//        wait.withMessage(error_message + "\n");
-//        return wait.until(
-//                ExpectedConditions.attributeContains(by, "text", expected_value)
-//        );
-//    }
+    private boolean waitForTextPresentInField(By by, String expected_value, String error_message, long timeOutInSeconds)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+        wait.withMessage(error_message + "\n");
+        return wait.until(
+                ExpectedConditions.attributeContains(by, "text", expected_value)
+        );
+    }
 }

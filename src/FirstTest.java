@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.util.List;
 
 public class FirstTest {
 
@@ -123,23 +124,55 @@ public class FirstTest {
 //        );
 //    }
 
-    @Test
-    public void textPresenceAtSearchField ()
-    {
-        waitForElementAndClick(
-                By.id("org.wikipedia:id/search_container"),
-                "Cannot find 'Search Wikipedia' input",
-                5
-        );
+//    @Test
+//    public void textPresenceAtSearchField ()
+//    {
+//        waitForElementAndClick(
+//                By.id("org.wikipedia:id/search_container"),
+//                "Cannot find 'Search Wikipedia' input",
+//                5
+//        );
+//
+//        waitForTextPresentInField(
+//                By.id("org.wikipedia:id/search_src_text"),
+//                "Search…",
+//                "Placeholder text is not 'Search...'",
+//                5
+//        );
+//
+//    }
 
-        waitForTextPresentInField(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Search…",
-                "Placeholder text is not 'Search...'",
-                5
-        );
-
-    }
+//    @Test
+//    public void testCancelAfterSearch()
+//    {
+//        String search_value = "Java";
+//
+//        waitForElementAndClick(
+//                By.id("org.wikipedia:id/search_container"),
+//                "Cannot find 'Search Wikipedia' input",
+//                5
+//        );
+//        waitForElementAndSendKeys(
+//                By.id("org.wikipedia:id/search_src_text"),
+//                search_value,
+//                "Cannot find search input",
+//                5
+//        );
+//
+//        Assert.assertTrue( "Less than 3 articles found",driver.findElementsById("org.wikipedia:id/page_list_item_container").size()>2);
+//
+//        waitForElementAndClick(
+//               By.id("org.wikipedia:id/search_close_btn"),
+//                "Cannot find X to cancel search",
+//                5
+//        );
+//
+//        waitForElementNotPresent(
+//                By.id("org.wikipedia:id/page_list_item_container"),
+//            "Search results are still present on the page",
+//            5
+//        );
+//    }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {

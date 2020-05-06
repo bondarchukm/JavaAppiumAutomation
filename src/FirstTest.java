@@ -176,31 +176,31 @@ public class FirstTest {
 //        );
 //    }
 
-//    @Test
-//    public void testSearchWordInAllSearchResults()
-//    {
-//        String search_value = "JAVA";
-//
-//        waitForElementAndClick(
-//                By.id("org.wikipedia:id/search_container"),
-//                "Cannot find 'Search Wikipedia' input",
-//                5
-//        );
-//
-//        waitForElementAndSendKeys(
-//                By.id("org.wikipedia:id/search_src_text"),
-//                search_value,
-//                "Cannot find search input",
-//                5
-//        );
-//
-//        List<WebElement> elements = driver.findElementsById("org.wikipedia:id/page_list_item_title");
-//        for (WebElement e : elements)
-//        {
-//            String search_value_lc = search_value.toLowerCase();
-//            Assert.assertTrue("Word '" + search_value + "' is not found in search result",e.getText().toLowerCase().contains(search_value_lc));
-//        }
-//    }
+    @Test
+    public void testSearchWordInAllSearchResults()
+    {
+        String search_value = "JAVA";
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/search_src_text"),
+                search_value,
+                "Cannot find search input",
+                5
+        );
+
+        List<WebElement> elements = driver.findElementsById("org.wikipedia:id/page_list_item_title");
+        for (WebElement e : elements)
+        {
+            String search_value_lc = search_value.toLowerCase();
+            Assert.assertTrue("Word '" + search_value + "' is not found in search result",e.getText().toLowerCase().contains(search_value_lc));
+        }
+    }
 
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)

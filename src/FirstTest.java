@@ -648,36 +648,36 @@ public class FirstTest {
 //        );
 //    }
 
-//    @Test
-//    public void testCheckArticleTitlePresence()
-//    {
-//        waitForElementAndClick(
-//                By.id("org.wikipedia:id/search_container"),
-//                "Cannot find 'Search Wikipedia' input",
-//                5
-//        );
-//
-//        String article_search_line = "Game of Thrones";
-//        String article_search_locator = "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='" + article_search_line +"']";
-//
-//        waitForElementAndSendKeys(
-//                By.xpath("//*[contains(@text, 'Search…')]"),
-//                article_search_line,
-//                "Cannot find search input",
-//                5
-//        );
-//        waitForElementAndClick(
-//                By.xpath(article_search_locator),
-//                "No results found for " + article_search_line,
-//                5
-//        );
-//        String article_title_locator_id = "org.wikipedia:id/view_page_title_text";
-//
-//        assertElementPresent(
-//                By.id(article_title_locator_id),
-//                "Article title '" + article_search_line +" 'is not found"
-//        );
-//    }
+    @Test
+    public void testCheckArticleTitlePresence()
+    {
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        String article_search_line = "Game of Thrones";
+        String article_search_locator = "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='" + article_search_line +"']";
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search…')]"),
+                article_search_line,
+                "Cannot find search input",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath(article_search_locator),
+                "No results found for " + article_search_line,
+                5
+        );
+        String article_title_locator_id = "org.wikipedia:id/view_page_title_text";
+
+        assertElementPresent(
+                By.id(article_title_locator_id),
+                "Article title '" + article_search_line +" 'is not found"
+        );
+    }
 
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
@@ -800,9 +800,9 @@ public class FirstTest {
         return element.getAttribute(attribute);
     }
 
-//    private void assertElementPresent(By by, String error_message)
-//    {
-//        WebElement element = driver.findElement(by);
-//        Assert.assertTrue("Article title element is not found",element != null);
-//    }
+    private void assertElementPresent(By by, String error_message)
+    {
+        WebElement element = driver.findElement(by);
+        Assert.assertTrue("Article title element is not found",element != null);
+    }
 }

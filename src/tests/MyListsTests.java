@@ -3,7 +3,6 @@ package tests;
 import lib.CoreTestCase;
 import lib.ui.*;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
 public class MyListsTests extends CoreTestCase
 {

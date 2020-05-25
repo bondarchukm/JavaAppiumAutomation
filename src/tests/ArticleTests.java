@@ -2,8 +2,10 @@ package tests;
 
 import lib.CoreTestCase;
 import lib.ui.ArticlePageObject;
+import lib.ui.MainPageObject;
 import lib.ui.SearchPageObject;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 public class ArticleTests extends CoreTestCase
 {
@@ -42,5 +44,20 @@ public class ArticleTests extends CoreTestCase
         ArticlePageObject.swipeToFooter();
     }
 
+    @Test
+    public void testCheckArticleTitlePresence()
+    {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
+        SearchPageObject.initSearchInput();
+
+        String article_search_line = "Game of Thrones";
+
+        SearchPageObject.typeSearchLine(article_search_line);
+        SearchPageObject.clickByArticleWithSubstring(article_search_line);
+
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject.assertElementPresent();
+    }
 
 }

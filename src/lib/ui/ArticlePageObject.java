@@ -4,6 +4,8 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static junit.framework.TestCase.assertTrue;
+
 public class ArticlePageObject extends MainPageObject {
 
     private static final String
@@ -14,7 +16,8 @@ public class ArticlePageObject extends MainPageObject {
         ADD_TO_MY_LIST_OVERLAY = "org.wikipedia:id/onboarding_button",
         MY_LIST_NAME_INPUT = "org.wikipedia:id/text_input",
         MY_LIST_OK_BUTTON = "//*[@text='OK']",
-        CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc='Navigate up']";
+        CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc='Navigate up']",
+        ARTICLE_TITLE_LOCATOR_ID = "org.wikipedia:id/view_page_title_text";
 
     public ArticlePageObject(AppiumDriver driver)
     {
@@ -101,5 +104,11 @@ public class ArticlePageObject extends MainPageObject {
                 "Cannot close article, cannot find X button",
                 5
         );
+    }
+
+    public void assertElementPresent()
+    {
+        WebElement element = driver.findElementById(ARTICLE_TITLE_LOCATOR_ID);
+        assertTrue("Article title element is not found",element != null);
     }
 }

@@ -4,3 +4,7 @@ out/production/JavaAppiumAutomation/MainClass.class
 out/production/JavaAppiumAutomation/MainClassTest.class
 .idea/workspace.xml
 .idea/workspace.xml
+apks/.DS_Store
+apks/.DS_Store
+apks/Wikipedia.app/_CodeSignature/CodeResources
+apks/Wikipedia.app/AboutViewController.plist

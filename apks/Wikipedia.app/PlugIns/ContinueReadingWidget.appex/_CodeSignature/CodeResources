@@ -14,15 +14,15 @@
 		</data>
 		<key>Base.lproj/MainInterface.storyboardc/M4Y-Lb-cyx-view-S3S-Oj-5AN.nib</key>
 		<data>
-		lFccODo9eRYxXdYYu+VsfCasna8=
+		TBdPDwjv8G4BB1KtpdbOuRIduYE=
 		</data>
 		<key>Base.lproj/MainInterface.storyboardc/UIViewController-M4Y-Lb-cyx.nib</key>
 		<data>
-		FAlw8xM2UKrg/z+tfaBfp3/GXp0=
+		fFTRPmntZOtWoRoY2r88bW6ModQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9+OZG9qBEMiuTlzPF38AZSDutiA=
+		1Xc5vJUcClvyMz55jjeY/wmXWVY=
 		</data>
 		<key>en.lproj/InfoPlist.strings</key>
 		<dict>
@@ -38,6 +38,10 @@
 	<dict>
 		<key>Base.lproj/InfoPlist.strings</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			cEfGGYjSufquKwjwGzLJzyNvyrM=
+			</data>
 			<key>hash2</key>
 			<data>
 			N2neWCXPMgE/LJyV9ZHFRuNVMJMLFfhyT3QjeRqjsqI=
@@ -45,6 +49,10 @@
 		</dict>
 		<key>Base.lproj/MainInterface.storyboardc/Info.plist</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			0MIPa0qiDjReRwwobTsnJ01z+l0=
+			</data>
 			<key>hash2</key>
 			<data>
 			sOic6ugSKWwGvBSX5ZyYEUE+pFecCWW0YXAo5CNbmCQ=
@@ -52,20 +60,32 @@
 		</dict>
 		<key>Base.lproj/MainInterface.storyboardc/M4Y-Lb-cyx-view-S3S-Oj-5AN.nib</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			TBdPDwjv8G4BB1KtpdbOuRIduYE=
+			</data>
 			<key>hash2</key>
 			<data>
-			2/x05hajQcxYmojXzFj+Zwp1zbPNdpITevedh7+SCCI=
+			akDHQC9vItFa2UqZ5sGuFzTbwAYnV7zVJiixY0N5lMg=
 			</data>
 		</dict>
 		<key>Base.lproj/MainInterface.storyboardc/UIViewController-M4Y-Lb-cyx.nib</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			fFTRPmntZOtWoRoY2r88bW6ModQ=
+			</data>
 			<key>hash2</key>
 			<data>
-			4YfnHXWttZh0xEYzpw1BhfoVToe/9m3GHkgVB8zjIJQ=
+			swkyTpL2q+5SXUkunTmsv5dDwbtn5AgtAbI0tjdE1bs=
 			</data>
 		</dict>
 		<key>en.lproj/InfoPlist.strings</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			cEfGGYjSufquKwjwGzLJzyNvyrM=
+			</data>
 			<key>hash2</key>
 			<data>
 			N2neWCXPMgE/LJyV9ZHFRuNVMJMLFfhyT3QjeRqjsqI=
@@ -76,7 +96,7 @@
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^.*</key>
+		<key>^</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -107,12 +127,24 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
+		<key>^</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
+		</dict>
+		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -148,6 +180,13 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
+		</dict>
+		<key>^[^/]+$</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>

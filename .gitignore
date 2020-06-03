@@ -32,3 +32,12 @@ out/production/JavaAppiumAutomation/lib/ui/NavigationUI.class
 out/production/JavaAppiumAutomation/lib/ui/MyListsPageObject.class
 out/production/JavaAppiumAutomation/lib/ui/MainPageObject.class
 out/production/JavaAppiumAutomation/lib/ui/ios/iOSSearchPageObject.class
+.idea/workspace.xml
+out/production/JavaAppiumAutomation/lib/CoreTestCase.class
+out/production/JavaAppiumAutomation/lib/ui/ArticlePageObject.class
+out/production/JavaAppiumAutomation/lib/ui/MainPageObject.class
+out/production/JavaAppiumAutomation/lib/ui/MyListsPageObject.class
+out/production/JavaAppiumAutomation/lib/ui/NavigationUI.class
+out/production/JavaAppiumAutomation/lib/ui/SearchPageObject.class
+out/production/JavaAppiumAutomation/lib/ui/WelcomePageObject.class
+.idea/workspace.xml

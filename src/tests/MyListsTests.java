@@ -43,7 +43,7 @@ public class MyListsTests extends CoreTestCase
         if(Platform.getInstance().isAndroid()){
             MyListsPageObject.openFolderByName(name_of_folder);
         }
-        MyListsPageObject.swipeByArticleToDelete(article_title);
+            MyListsPageObject.swipeByArticleToDelete(article_title);
     }
 
     @Test

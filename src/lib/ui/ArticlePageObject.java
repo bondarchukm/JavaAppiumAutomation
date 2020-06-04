@@ -11,16 +11,16 @@ import static junit.framework.TestCase.assertTrue;
 abstract public class ArticlePageObject extends MainPageObject {
 
     protected static String
-        TITLE,
-        FOOTER_ELEMENT,
-        OPTIONS_BUTTON,
-        OPTIONS_ADD_TO_MY_LIST_BUTTON,
-        ADD_TO_MY_LIST_OVERLAY,
-        MY_LIST_NAME_INPUT,
-        MY_LIST_OK_BUTTON,
-        CLOSE_ARTICLE_BUTTON,
-        ARTICLE_TITLE_LOCATOR_ID,
-        SYNC_SUGGESTION_CLOSE_BUTTON;
+            TITLE_TPL,
+            FOOTER_ELEMENT,
+            OPTIONS_BUTTON,
+            OPTIONS_ADD_TO_MY_LIST_BUTTON,
+            ADD_TO_MY_LIST_OVERLAY,
+            MY_LIST_NAME_INPUT,
+            MY_LIST_OK_BUTTON,
+            CLOSE_ARTICLE_BUTTON,
+            ARTICLE_TITLE_LOCATOR_ID,
+            SYNC_SUGGESTION_CLOSE_BUTTON;
 
     public ArticlePageObject(AppiumDriver driver)
     {
@@ -29,12 +29,27 @@ abstract public class ArticlePageObject extends MainPageObject {
 
     public WebElement waitForTitleElement()
     {
-        return this.waitForElementPresent(TITLE, "Cannot find article title on page", 10);
+        return this.waitForElementPresent(TITLE_TPL, "Cannot find article title on page", 5);
+    }
+
+    public WebElement waitForTitleElement(String substring)
+    {
+        return this.waitForElementPresent(TITLE_TPL.replace("{TITLEID}", substring), "Cannot find article title on page", 5);
     }
 
     public String getArticleTitle()
     {
         WebElement title_element = waitForTitleElement();
+        if(Platform.getInstance().isAndroid()) {
+            return title_element.getAttribute("text");
+        } else {
+            return title_element.getAttribute("name");
+        }
+    }
+
+    public String getArticleTitle(String title_substring)
+    {
+        WebElement title_element = waitForTitleElement(title_substring);
         if(Platform.getInstance().isAndroid()) {
             return title_element.getAttribute("text");
         } else {

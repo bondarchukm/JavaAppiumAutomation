@@ -12,41 +12,40 @@ abstract public class SearchPageObject extends MainPageObject {
             SEARCH_RESULT_ELEMENT,
             SEARCH_EMPTY_RESULT_ELEMENT;
 
-    public SearchPageObject (AppiumDriver driver){
+    public SearchPageObject(AppiumDriver driver) {
         super(driver);
     }
 
     /* TEMPLATES METHODS */
-    private static String getResultSearchElement(String substring)
-    {
+    private static String getResultSearchElement(String substring) {
         return SEARCH_RESULT_BY_SUBSTRING_TPL.replace("{SUBSTRING}", substring);
     }
     /* TEMPLATES METHODS */
 
-    public void initSearchInput()
-    {
+    public void initSearchInput() {
         this.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Cannot find and click search init element", 5);
         this.waitForElementPresent(SEARCH_INIT_ELEMENT, "Cannot find search input after clicking search init element");
     }
 
-    public void waitForCancelButtonToAppear()
-    {
+    public void waitForCancelButtonToAppear() {
         this.waitForElementPresent(SEARCH_CANCEL_BUTTON, "Cannot find search cancel button", 5);
     }
 
-    public void waitForCancelButtonToDisappear()
-    {
+    public void waitForCancelButtonToDisappear() {
         this.waitForElementNotPresent(SEARCH_CANCEL_BUTTON, "Search cancel button is still present", 5);
     }
 
-    public void clickCancelSearch()
-    {
+    public void clickCancelSearch() {
         this.waitForElementAndClick(SEARCH_CANCEL_BUTTON, "Cannot find and click search cancel button", 5);
     }
 
-    public void typeSearchLine(String search_line)
-    {
+    public void typeSearchLine(String search_line) {
         this.waitForElementAndSendKeys(SEARCH_INPUT, search_line, "Cannot find and type into search input", 5);
+    }
+
+    public void clearSearchLine()
+    {
+        this.waitForElementAndClear(SEARCH_INPUT, "Cannot find and clear the search line", 5);
     }
 
     public void waitForSearchResult(String substring)
